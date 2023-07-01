@@ -2,6 +2,11 @@ import{useState} from 'react'
 
 const Form = () => {
     const [guests, setGuests] = useState(0)
+    const [datetime, setDatetime] = useState('')
+    const [firstname, setFirstname] = useState('')
+    const [lastname, setLastname] = useState('')
+    const [email, setEmail] = useState('')
+    const [special, setSpecial] = useState('')
     
     const handleAddGuest =(e)=>{
         e.preventDefault();
@@ -14,10 +19,38 @@ const Form = () => {
         }
     }
 
+    const handleDatetime=(e)=>{
+        setDatetime(e.target.value)
+        console.log(datetime)
+    }
+
+    const handleFirstname =(e)=>{
+        setFirstname(e.target.value)
+    }
+
+    const handleLastname=(e)=>{
+        setLastname(e.target.value)
+    } 
+
+    const handleEmail=(e)=>{
+        setEmail(e.target.value)
+    }
+
+    const handleSpecial =(e)=>{
+        setSpecial(e.target.value)
+    }
+
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+        console.log(guests,firstname,lastname,datetime,email,special)
+    }
+
+
+
   return (
     <div className='form-area'>
         <h2 className='form-title'>Table Reservation</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className='guests-area'>
                 <label htmlFor="guests">Guests</label>
                 <div className="counter">
@@ -28,25 +61,25 @@ const Form = () => {
             </div>
             <div className="data_time-area">
                 <label htmlFor="datetime">Date & Time</label>
-                <input type="datetime-local" name="datetime" />
+                <input type="datetime-local" name="datetime" value={datetime} onChange={handleDatetime}/>
             </div>
             <div className="name-area">
                 <div className="firstname">
                     <label htmlFor="firstname">First name</label>
-                    <input type="text"  name='firstname' placeholder='Jane'/>
+                    <input type="text"  name='firstname' placeholder='Jane' onChange={handleFirstname} value={firstname}/>
                 </div>
                 <div className="lastname">
                     <label htmlFor="lastname">Last name</label>
-                    <input type="text"  name='lastname' placeholder='Doe'/>
+                    <input type="text"  name='lastname' placeholder='Doe' onChange={handleLastname} value={lastname}/>
                 </div>
             </div>
             <div className="email">
                 <label htmlFor="email">Email Address</label>
-                <input type="email" name="email" placeholder='example@example.com'/>
+                <input onChange={handleEmail} value={email} type="email" name="email" placeholder='example@example.com'/>
             </div>
             <div className="special">
                 <label htmlFor="special">Special requirements</label>
-                <textarea name="special" id="" cols="30" rows="4" placeholder='Please specify your special requirements'/>
+                <textarea onChange={handleSpecial} value={special} name="special" id="" cols="30" rows="4" placeholder='Please specify your special requirements'/>
             </div>
             <button type='submit' className='submit-btn'>Reserve a table</button>
         </form>
