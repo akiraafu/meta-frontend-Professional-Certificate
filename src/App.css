@@ -41,7 +41,7 @@
 .description-area{
     width: 100%;
     padding: 10px;
-    margin: 10px auto;
+    /* margin: 10px auto; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -81,6 +81,22 @@
     border-bottom: 1px solid var(--Highlight-1);
 }
 
+.form-area form {
+    width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+   justify-content: center;
+}
+
+.form-area form .data_time-area{
+    width: 100%;
+}
+
+.form-area form .email{
+    width: 100%;
+}
+
 .form-area form label{
     font-size: 20px;
     font-weight: bold;
@@ -88,12 +104,80 @@
 
 .form-area form input{
     width: 100%;
+    padding: 5px 10px;
     background-color: var(--Highlight-1);
     border-radius: 5px;
 }
 
 .form-area form textarea{
     width: 100%;
+    padding: 5px 10px;
     background-color: var(--Highlight-1);
     border-radius: 5px;
 }
+
+.form-area .guests-area{
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.form-area .guests-area .counter{
+    padding: 5px;
+    width: 100px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.form-area .guests-area .counter .control__btn{
+    width: 25px;
+    height: 25px;
+    padding: 0px;
+    line-height:0;
+    text-align:center;
+    border:none;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.form-area .name-area{
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-area .name-area div{
+    width: 100%;
+}
+
+.form-area .special{
+    width: 100%;
+    margin: 10px auto;
+}
+
+.form-area form .submit-btn{
+    margin: auto;
+    width: 150px;
+    height: 40px;
+    background-color: var(--primary-2);
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+}
+

@@ -14,10 +14,6 @@ const Form = () => {
         }
     }
 
-    const handleReset =(e)=>{
-        e.preventDefault();
-        setGuests(0)
-    }
   return (
     <div className='form-area'>
         <h2 className='form-title'>Table Reservation</h2>
@@ -25,12 +21,9 @@ const Form = () => {
             <div className='guests-area'>
                 <label htmlFor="guests">Guests</label>
                 <div className="counter">
+                    <button className="control__btn" onClick={handleMinusGuest}>&#45;</button>
                     <span className="counter__output">{guests}</span>
-                    <div className="btn__container">
-                        <button className="control__btn" onClick={handleAddGuest}>+</button>
-                        <button className="control__btn" onClick={handleMinusGuest}>-</button>
-                        <button className="reset" onClick={handleReset}>Reset</button>
-                    </div>
+                    <button className="control__btn" onClick={handleAddGuest}>&#43;</button>
                 </div>
             </div>
             <div className="data_time-area">
@@ -40,22 +33,22 @@ const Form = () => {
             <div className="name-area">
                 <div className="firstname">
                     <label htmlFor="firstname">First name</label>
-                    <input type="text"  name='firstname'/>
+                    <input type="text"  name='firstname' placeholder='Jane'/>
                 </div>
                 <div className="lastname">
                     <label htmlFor="lastname">Last name</label>
-                    <input type="text"  name='lastname'/>
+                    <input type="text"  name='lastname' placeholder='Doe'/>
                 </div>
             </div>
             <div className="email">
                 <label htmlFor="email">Email Address</label>
-                <input type="email" name="email" />
+                <input type="email" name="email" placeholder='example@example.com'/>
             </div>
             <div className="special">
                 <label htmlFor="special">Special requirements</label>
-                <textarea name="special" id="" cols="30" rows="4"/>
+                <textarea name="special" id="" cols="30" rows="4" placeholder='Please specify your special requirements'/>
             </div>
-            <button type='submit' className='btn'>Reserve a table</button>
+            <button type='submit' className='submit-btn'>Reserve a table</button>
         </form>
     </div>
   )
