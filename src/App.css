@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+:root {
+    --primary:#495E57;
+    --primary-2:#F4CE14;
+    --Secondary-1:#EE9972;
+    --Secondary-2:#FBDABB;
+    --Highlight-1:#EDEFEE;
+    --Highlight-2:#333333
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-header{
+    padding: 10px;
+    width: 100%;
+    height:auto;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App-header .title{
+    margin: 10px 10px 0 10px;
+    color:var(--primary-2);
+    font-weight: normal;
+    font-size: 60px;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header p{
+    color:white;
+    font-family: 'Markazi Text', serif;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-header .city{
+    font-size: 2.5rem;
+    margin: -10px 10px 10px 10px;
+}
+
+.description-area{
+    width: 100%;
+    padding: 10px;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.description-area .description{
+    width: 50%;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.description-area .description-img{
+    padding-right: 10px;
+    width: 50%;
+    margin-right: 10px;
+
+}
+
+.description-area .description-img img{
+    object-fit: cover;
+    border-radius: 10px;
+    overflow:hidden
+}
+
+.form-area{
+    width: 100%;
+    height:auto;
+    background-color: white;
+    padding: 10px;
+    font-family: 'Karla', sans-serif;
 }
