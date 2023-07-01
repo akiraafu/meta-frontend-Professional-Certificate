@@ -60,9 +60,9 @@ const Form = () => {
             <div className='guests-area'>
                 <label htmlFor="guests">Guests</label>
                 <div className="counter">
-                    <button className="control__btn" onClick={handleMinusGuest}>&#45;</button>
-                    <span className="counter__output">{guests}</span>
-                    <button className="control__btn" onClick={handleAddGuest}>&#43;</button>
+                    <button className="control__btn" onClick={handleMinusGuest} >&#45;</button>
+                    <span className="counter__output" data-testid="guestNumber">{guests}</span>
+                    <button className="control__btn" onClick={handleAddGuest} data-testid="addOne">&#43;</button>
                 </div>
             </div>
             <div className="data_time-area">
