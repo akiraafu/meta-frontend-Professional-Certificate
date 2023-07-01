@@ -1,10 +1,12 @@
 import{useState} from 'react'
+import { Link } from 'react-router-dom'
 
 const Form = () => {
     const [guests, setGuests] = useState(0)
     const [datetime, setDatetime] = useState('')
     const [firstname, setFirstname] = useState('')
     const [lastname, setLastname] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
     const [email, setEmail] = useState('')
     const [special, setSpecial] = useState('')
     
@@ -32,6 +34,10 @@ const Form = () => {
         setLastname(e.target.value)
     } 
 
+    const handlePhoneNumber=(e)=>{
+        setPhoneNumber(e.target.value)
+    }
+
     const handleEmail=(e)=>{
         setEmail(e.target.value)
     }
@@ -42,7 +48,7 @@ const Form = () => {
 
     const handleSubmit=(e)=>{
         e.preventDefault()
-        console.log(guests,firstname,lastname,datetime,email,special)
+        console.log(guests,firstname,lastname,datetime,phoneNumber,email,special)
     }
 
 
@@ -54,9 +60,9 @@ const Form = () => {
             <div className='guests-area'>
                 <label htmlFor="guests">Guests</label>
                 <div className="counter">
-                    <button className="control__btn" onClick={handleMinusGuest}>&#45;</button>
-                    <span className="counter__output">{guests}</span>
-                    <button className="control__btn" onClick={handleAddGuest}>&#43;</button>
+                    <button className="control__btn" onClick={handleMinusGuest} >&#45;</button>
+                    <span className="counter__output" data-testid="guestNumber">{guests}</span>
+                    <button className="control__btn" onClick={handleAddGuest} data-testid="addOne">&#43;</button>
                 </div>
             </div>
             <div className="data_time-area">
@@ -74,6 +80,10 @@ const Form = () => {
                 </div>
             </div>
             <div className="email">
+                <label htmlFor="phone">Phone Number</label>
+                <input onChange={handlePhoneNumber} value={phoneNumber} type="number" name="phone" placeholder='0000000000'/>
+            </div>
+            <div className="email">
                 <label htmlFor="email">Email Address</label>
                 <input onChange={handleEmail} value={email} type="email" name="email" placeholder='example@example.com'/>
             </div>
@@ -81,7 +91,8 @@ const Form = () => {
                 <label htmlFor="special">Special requirements</label>
                 <textarea onChange={handleSpecial} value={special} name="special" id="" cols="30" rows="4" placeholder='Please specify your special requirements'/>
             </div>
-            <button type='submit' className='submit-btn'>Reserve a table</button>
+            {/* <button type='submit' className='btn'>Reserve a table</button> */}
+            <Link className='btn text-center leading-10' to='/confirmed'>Reserve a table</Link>
         </form>
     </div>
   )
