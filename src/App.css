@@ -11,6 +11,10 @@
     width: 100vw;
     height: 100vh;
     background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
 }
 
 .App-header{
@@ -68,10 +72,10 @@
 }
 
 .form-area{
-    width: 100%;
+    max-width: 500px;
     height:auto;
     background-color: white;
-    padding: 10px;
+    padding: 20px;
     font-family: 'Karla', sans-serif;
 }
 
@@ -170,8 +174,9 @@
     margin: 10px auto;
 }
 
-.form-area form .submit-btn{
+.form-area .btn{
     margin: auto;
+    margin-bottom: 30px;
     width: 150px;
     height: 40px;
     background-color: var(--primary-2);
@@ -179,5 +184,6 @@
     font-weight: bold;
     border: none;
     border-radius: 25px;
+
 }
 
