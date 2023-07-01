@@ -74,3 +74,26 @@
     padding: 10px;
     font-family: 'Karla', sans-serif;
 }
+
+.form-area .form-title{
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--Highlight-1);
+}
+
+.form-area form label{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-area form input{
+    width: 100%;
+    background-color: var(--Highlight-1);
+    border-radius: 5px;
+}
+
+.form-area form textarea{
+    width: 100%;
+    background-color: var(--Highlight-1);
+    border-radius: 5px;
+}
